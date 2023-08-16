@@ -22,6 +22,14 @@ Route::get('/test', function () {
     return view('admin.layouts.base');
 });
 
+Route::get('/dash', function () {
+    return view('admin.dashboard');
+});
+
+Route::get('/achievement', function () {
+    return view('admin.achievement-create');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
