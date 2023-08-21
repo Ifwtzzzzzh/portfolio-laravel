@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Achievement;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,10 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
-    }
+        $achievement = Achievement::count();
 
-    public function test() {
-        return view('admin.layouts.base');
+        return view('home', ['achievement' => $achievement]);
+        // return view('home');
     }
 }

@@ -1,40 +1,32 @@
 @extends('admin.layouts.base')
 
-@section('title', 'Achievement')
+@section('title', 'Create Achievement')
 
 @section('content')
 
-<div id='recipients' class="p-8 mt-6 lg:mt-0 rounded shadow bg-white relative overflow-x-auto">
- <table id="myTable" class="stripe hover">
-  <thead>
-   <tr>
-    <th data-priority="1">Name</th>
-    <th data-priority="2">Time</th>
-    <th data-priority="3">Description</th>
-    <th data-priority="4">Action</th>
-   </tr>
-  </thead>
-  <tbody>
-   <tr>
-    <td>LKS Provinsi</td>
-    <td>2022</td>
-    <td>Testing</td>
-    <td>
-     <button type="button" class="text-white bg-yellow-300 hover:bg-yellow-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-1.5 mb-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-900">Update</button>
-     <button type="button" class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-1.5 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
-    </td>
-   </tr>
-   <tr>
-    <td>LKS Provinsi</td>
-    <td>2022</td>
-    <td>Testing</td>
-    <td>
-     <button type="button" class="text-white bg-yellow-300 hover:bg-yellow-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-1.5 mb-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-900">Update</button>
-     <button type="button" class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-1.5 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
-    </td>
-   </tr>
-  </tbody>
- </table>
+<div id='recipients' class="p-8 lg:mt-0 rounded shadow bg-white relative overflow-x-auto">
+ <div class="p-6">             
+  <form enctype="multipart/form-data" method="POST" action="{{ route('admin.achievement.store') }}">
+   @csrf
+   <div class="mb-6">
+     <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter Achievement Name</label>
+     <input type="text" name="name" id="name" value="{{ old('name') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="The First Winner of LKS ITSSB Lampung Province" required>
+   </div>
+   <div class="mb-6">
+    <label for="time" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter Year Achievement was Held</label>
+    <input id="text" name="time" id="time" value="{{ old('time') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="2023" required>
+  </div>
+   <div class="mb-6">
+    <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter Achievement Description</label>
+    <textarea name="description" id="description" value="{{ old('description') }}" id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a description..."></textarea>
+  </div>
+  <div class="mb-6">
+    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="image">Upload E-Certificate</label>
+    <input id="image" name="image" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" type="file">
+    <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="image_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
+  </div>
+  <button type="submit" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Submit</button>
+  </form>
 </div>
 
 @endsection
