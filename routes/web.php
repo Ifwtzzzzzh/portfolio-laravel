@@ -3,11 +3,14 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AchievementController;
+use App\Http\Controllers\Admin\ContactMeController;
 use App\Http\Controllers\Admin\EducationController;
 use App\Http\Controllers\Admin\OrganizationController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\SocialMediaController;
 use App\Http\Controllers\HomeController;
+use App\Mail\SendEmail;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +23,9 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/test', function () {
     return view('admin.layouts.test');
@@ -36,21 +39,20 @@ Route::get('/achievement', function () {
     return view('admin.achievement');
 });
 
-Route::get('/contact', function () {
-    return view('admin.contact');
-});
-
-Route::get('/education', function () {
-    return view('admin.education');
-});
-
 Route::get('/organization', function () {
     return view('admin.organization');
 });
 
+Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/', [ContactMeController::class, 'welcome'])->name('welcome');
+
+Route::get('/contact-create', [ContactMeController::class, 'create'])->name('contact.create');
+Route::post('/contact-create', [ContactMeController::class, 'store'])->name('contact.store');
+
 Auth::routes();
 
 Route::get('/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');
+Route::get('/contact', [ContactMeController::class, 'index'])->name('admin.contact');
 
 Route::group(['prefix' => 'achievement'], function() {
     Route::get('/', [AchievementController::class, 'index'])->name('admin.achievement');

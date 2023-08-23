@@ -29,4 +29,8 @@ class HomeController extends Controller
         return view('home', ['achievement' => $achievement]);
         // return view('home');
     }
+
+    public function home() {
+        return view('welcome');
+    }
 }

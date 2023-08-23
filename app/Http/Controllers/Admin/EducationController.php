@@ -22,7 +22,7 @@ class EducationController extends Controller
     public function edit($id) {
         $education = Education::find($id);
 
-        return view('admin.achievement-edit', ['education' => $education]);
+        return view('admin.education-edit', ['education' => $education]);
     }
 
     public function store(Request $request) {
