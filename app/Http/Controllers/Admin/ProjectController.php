@@ -57,7 +57,7 @@ class ProjectController extends Controller
         Project::create($data);
 
         // REDIRECT
-        return redirect()->route('admin.organization')->with('success', 'Data has been Created');
+        return redirect()->route('admin.project')->with('success', 'Data has been Created');
     }
 
     public function update(Request $request, $id) {
@@ -79,7 +79,7 @@ class ProjectController extends Controller
 
         if ($request->image) {
             // SAVE NEW IMAGE
-            $image = $request->image();
+            $image = $request->image;
             $originalImageName = Str::random(10).$image->getClientOriginalName();
             $image->storeAs('public/image', $originalImageName);
             $data['image'] = $originalImageName;

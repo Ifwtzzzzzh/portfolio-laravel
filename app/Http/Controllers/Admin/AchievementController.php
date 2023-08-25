@@ -66,14 +66,14 @@ class AchievementController extends Controller
             'name' => 'required|string',
             'time' => 'required|string',
             'description' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,jpg,png'
+            'image' => 'required|image|mimes:jpeg,jpg,png',
         ]);
 
         $achievement = Achievement::find($id);
 
         if ($request->image) {
             // SAVE NEW IMAGE
-            $image = $request->image();
+            $image = $request->image;
             $originalImageName = Str::random(10).$image->getClientOriginalName();
             $image->storeAs('public/image', $originalImageName);
             $data['image'] = $originalImageName;

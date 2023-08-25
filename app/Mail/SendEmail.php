@@ -2,12 +2,9 @@
 
 namespace App\Mail;
 
-use App\Models\ContactMe;
 use Illuminate\Bus\Queueable;
-use Illuminate\Http\Request;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
@@ -51,9 +48,4 @@ class SendEmail extends Mailable
     {
         return [];
     }
-
-    // public function build()
-    // {
-    //     return $this->markdown('email')->subject(config('app.name') . 'Contact Me');
-    // }
 }

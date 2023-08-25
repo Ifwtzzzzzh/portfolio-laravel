@@ -47,7 +47,7 @@ class OrganizationController extends Controller
         $logo->storeAs('public/image', $originalLogoName);
 
         // OVERRIDE DATA
-        $data['image'] = $originalLogoName;
+        $data['logo'] = $originalLogoName;
 
         // STORE IMAGE NAME
         Organization::create($data);
@@ -71,10 +71,10 @@ class OrganizationController extends Controller
 
         if ($request->logo) {
             // SAVE NEW IMAGE
-            $logo = $request->logo();
+            $logo = $request->logo;
             $originalLogoName = Str::random(10).$logo->getClientOriginalName();
             $logo->storeAs('public/image', $originalLogoName);
-            $data['image'] = $originalLogoName;
+            $data['logo'] = $originalLogoName;
 
             // STORAGE OLD IMAGE
             Storage::delete('public/image'.$organization->logo);

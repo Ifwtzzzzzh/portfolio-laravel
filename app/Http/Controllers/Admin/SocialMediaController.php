@@ -47,7 +47,7 @@ class SocialMediaController extends Controller
         $logo->storeAs('public/image', $originalLogoName);
 
         // OVERRIDE DATA
-        $data['image'] = $originalLogoName;
+        $data['logo'] = $originalLogoName;
 
         // STORE IMAGE NAME
         SocialMedia::create($data);
@@ -71,10 +71,10 @@ class SocialMediaController extends Controller
 
         if ($request->logo) {
             // SAVE NEW IMAGE
-            $logo = $request->logo();
+            $logo = $request->logo;
             $originalLogoName = Str::random(10).$logo->getClientOriginalName();
             $logo->storeAs('public/image', $originalLogoName);
-            $data['image'] = $originalLogoName;
+            $data['logo'] = $originalLogoName;
 
             // STORAGE OLD IMAGE
             Storage::delete('public/image'.$social_media->logo);
