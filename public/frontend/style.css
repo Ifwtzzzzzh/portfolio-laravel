@@ -39,4 +39,112 @@
   table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
     background-color: #667eea !important;
   }
-/* ========= DATA TABLE ========= */
+/* ========= END DATA TABLE ========= */
+
+/* ========= WELCOME ========= */
+.testimonial-item {
+  transition-duration: 1200ms;
+}
+
+@media only screen and (max-device-width: 1024px){
+  .home {
+    margin-block-start: 5rem;
+  }
+
+  .organization, .footer,  .experience-timeline, .project-card, .contact-form {
+    margin-block-start: 2rem;
+  }
+
+  .experience, .project, .testimonial, .contact{
+    margin-block-start: 5rem;
+  }
+
+  .project-card {
+    gap: 8;
+  }
+
+  .testimonial-svg {
+    inline-size: 1rem;
+    block-size: 1rem;
+  }
+
+  .testimonial-letter {
+    font-size: 0.97rem/* 24px */;
+    line-height: 1.3rem/* 32px */;
+  }
+
+  .btn-contact {
+    inline-size: 100%;
+  }
+}
+
+@media only screen and (min-device-width: 1280px){
+  .home {
+    margin-block-start: 2rem;
+  }
+
+  .hero-image, .mockup {
+    inline-size: 90%;
+  }
+
+  .experience, .project, .testimonial, .contact{
+    margin-block-start: 2.5rem;
+  }
+
+  .experience-title, .project-title, .testimonial-title, .contact-title, .experience-timeline {
+    justify-content: center;
+    display: flex;
+  }
+
+  .experience-timeline {
+    gap: 4rem;
+    margin-block-start: 5rem;
+    margin-inline-start: 20rem;
+    margin-inline-end: 20rem;
+  }
+
+  .experience-subtitle, .project-subtitle, .testimonial-subtitle, .contact-subtitle {
+    text-align: center;
+  }
+
+  .project-card, .contact-form, .footer {
+    margin-block-start: 5rem;
+  }
+
+  .project-card {
+    margin-inline-start: 5rem;
+    margin-inline-end: 5rem;
+  }
+
+  .contact-form {
+    margin-inline-start: 10rem;
+    margin-inline-end: 10rem;
+  }
+}
+
+@media only screen and (min-device-width: 1370px) {
+  .home, .experience, .project, .testimonial, .contact, .footer {
+    margin-block-start: 10rem;
+  }
+
+  .about {
+    margin-block-start: 6rem;
+  }
+
+  .experience-timeline {
+    margin-inline-start: 40rem;
+    margin-inline-end: 40rem;
+  }
+
+  .project-card, .contact-form {
+    margin-inline-start: 20rem;
+    margin-inline-end: 20rem;
+  }
+}
+/* ========= END WELCOME ========= */
+
+/* ========= SOCIAL MEDIA ========= */
+.btn-social-media {
+  inline-size: 100%;
+}
+/* ========= END SOCIAL MEDIA ========= */

@@ -39,15 +39,16 @@ Route::get('/achievement', function () {
     return view('admin.achievement');
 });
 
-Route::get('/organization', function () {
-    return view('admin.organization');
-});
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/', [ContactMeController::class, 'welcome'])->name('welcome');
 
 Route::get('/contact-create', [ContactMeController::class, 'create'])->name('contact.create');
 Route::post('/contact-create', [ContactMeController::class, 'store'])->name('contact.store');
+
+Route::get('/link', function () {
+    return view('sosial-media');
+});
 
 Auth::routes();
 
