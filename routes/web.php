@@ -23,23 +23,6 @@ use Illuminate\Support\Facades\Mail;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('/test', function () {
-    return view('admin.layouts.test');
-});
-
-Route::get('/dash', function () {
-    return view('admin.dashboard');
-});
-
-Route::get('/achievement', function () {
-    return view('admin.achievement');
-});
-
-
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/', [ContactMeController::class, 'welcome'])->name('welcome');
 
