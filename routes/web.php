@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Mail;
 */
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/review', [HomeController::class, 'home'])->name('home');
 Route::get('/', [ContactMeController::class, 'welcome'])->name('welcome');
 
 Route::get('/contact-create', [ContactMeController::class, 'create'])->name('contact.create');

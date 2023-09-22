@@ -1,3 +1,9 @@
+/* ========= ALL ========= */
+html {
+  scroll-behavior: smooth;
+}
+/* ========= END ALL ========= */
+
 /* ========= DATA TABLE ========= */
 .dataTables_wrapper select,
   .dataTables_wrapper .dataTables_filter input {
@@ -97,10 +103,10 @@
   }
 
   .experience-timeline {
-    gap: 4rem;
+    gap: 5rem;
     margin-block-start: 5rem;
-    margin-inline-start: 20rem;
-    margin-inline-end: 20rem;
+    margin-inline-start: 25rem;
+    margin-inline-end: 25rem;
   }
 
   .experience-subtitle, .project-subtitle, .testimonial-subtitle, .contact-subtitle {

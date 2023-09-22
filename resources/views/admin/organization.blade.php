@@ -1,6 +1,6 @@
 @extends('admin.layouts.base')
 
-@section('title', 'Achievement')
+@section('title', 'Organization')
 
 @section('content')
 
@@ -33,6 +33,7 @@
     <th data-priority="2">Name</th>
     <th data-priority="3">Time</th>
     <th data-priority="4">Logo</th>
+    <th data-priority="5">Description</th>
     <th>Action</th>
    </tr>
   </thead>
@@ -45,6 +46,7 @@
     <td>
      <img src="{{ asset('storage/image/'.$organization->logo) }}" alt="" width="50%">
     </td>
+    <td>{{ $organization->description }}</td>
     <td>
      <a href="{{ route('admin.organization.edit', $organization->id) }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-1.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900">Update</a>
      <form method="POST" action="{{ route('admin.organization.destroy', $organization->id) }}">

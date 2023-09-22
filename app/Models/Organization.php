@@ -14,6 +14,7 @@ class Organization extends Model
     protected $fillable = [
         'name',
         'time',
-        'logo'
+        'logo',
+        'description'
     ];
 }

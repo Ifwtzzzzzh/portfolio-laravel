@@ -81,7 +81,7 @@
                         About me
                         <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </a>
-                    <a href="#" class="inline-flex items-center justify-center mb-10 px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                    <a href="https://docs.google.com/document/d/1ajLHCFTht2hLGJopoZ6X1sTu6DSco4Uw/edit?usp=sharing&ouid=112214019342316224491&rtpof=true&sd=true" class="inline-flex items-center justify-center mb-10 px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                         Download my CV
                     </a> 
                 </div>
@@ -112,27 +112,11 @@
                     <p class="max-w-2xl font-light text-gray-500 md:text-lg lg:text-xl dark:text-gray-400">A Passionate Flutter Developer from Metro, Lampung, Indonesia with a fervent dedication to mastering the intricacies of Flutter's framework, I bring a blend of creativity and code to the table. Eager to transform imaginative concepts into polished, user-friendly applications, I thrive on challenges and am driven by the opportunity to continuously learn and contribute to the ever-evolving landscape of mobile development. I am also a Fragrance Enthusiast and Dota 2 enjoyer.</p>
                     <p class="max-w-2xl mt-6 mb-2 font-medium md:text-lg lg:text-xl dark:text-white">Follow me on social media</p>
                     <div class="flex items-center">
-                        <a href="#" class="mr-2">
-                            <img src="{{ asset('frontend/images/icons8-discord.png') }}" alt="" srcset="">
+                        @foreach ($social_medias as $social_media)
+                        <a href="{{ $social_media->link }}" class="mr-2">
+                            <img src="{{ asset('storage/image/'.$social_media->logo) }}" alt="">
                         </a>
-                        <a href="#" class="mr-2">
-                            <img src="{{ asset('frontend/images/icons8-facebook.png') }}" alt="" srcset="">
-                        </a>
-                        <a href="#" class="mr-2">
-                            <img src="{{ asset('frontend/images/icons8-github.png') }}" alt="" srcset="">
-                        </a>
-                        <a href="#" class="mr-2">
-                            <img src="{{ asset('frontend/images/icons8-instagram.png') }}" alt="" srcset="">
-                        </a>
-                        <a href="#" class="mr-2">
-                            <img src="{{ asset('frontend/images/icons8-telegram.png') }}" alt="" srcset="">
-                        </a>
-                        <a href="#" class="mr-2">
-                            <img src="{{ asset('frontend/images/icons8-twitter.png') }}" alt="" srcset="">
-                        </a>
-                        <a href="#" class="mr-2">
-                            <img src="{{ asset('frontend/images/icons8-youtube.png') }}" alt="" srcset="">
-                        </a>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -150,48 +134,28 @@
                 <div class="education">
                     <mark class="max-w-2xl mt-6 mb-3 font-bold md:text-xl dark:text-white px-2 text-white bg-green-600 rounded dark:bg-green-500">Education</mark>
                     <ol class="education relative border-l mt-2 border-gray-200 dark:border-gray-700">
+                        @foreach ($educations as $education)
                         <li class="mb-10 ml-4">
                             <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">February 2022</time>
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Application UI code in Tailwind CSS</h3>
-                            <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
+                            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{{ $education->time }}</time>
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ $education->name }}</h3>
+                            <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{{ $education->description }}</p>
                         </li>
-                        <li class="mb-10 ml-4">
-                            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">March 2022</time>
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Marketing UI design in Figma</h3>
-                            <p class="text-base font-normal text-gray-500 dark:text-gray-400">All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.</p>
-                        </li>
-                        <li class="ml-4">
-                            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">April 2022</time>
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">E-Commerce UI code in Tailwind CSS</h3>
-                            <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements built on top of Tailwind CSS.</p>
-                        </li>
+                        @endforeach
                     </ol>
                 </div>
 
                 <div class="organization">
                     <mark class="max-w-2xl mt-6 mb-3 font-bold md:text-xl dark:text-white px-2 text-white bg-green-600 rounded dark:bg-green-500">Organization</mark>
                     <ol class="education relative border-l mt-2 border-gray-200 dark:border-gray-700">
+                        @foreach ($organizations as $organization)
                         <li class="mb-10 ml-4">
                             <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">February 2022</time>
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Application UI code in Tailwind CSS</h3>
-                            <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
+                            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{{ $organization->time }}</time>
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ $organization->name }}</h3>
+                            <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{{ $organization->description }}</p>
                         </li>
-                        <li class="mb-10 ml-4">
-                            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">March 2022</time>
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Marketing UI design in Figma</h3>
-                            <p class="text-base font-normal text-gray-500 dark:text-gray-400">All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.</p>
-                        </li>
-                        <li class="ml-4">
-                            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">April 2022</time>
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">E-Commerce UI code in Tailwind CSS</h3>
-                            <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements built on top of Tailwind CSS.</p>
-                        </li>
+                        @endforeach
                     </ol>
                 </div>
             </div>
@@ -206,54 +170,20 @@
             <p class="project-subtitle max-w-4xl font-light text-gray-500 md:text-lg lg:text-xl dark:text-gray-400 experience-title pt-5 mx-auto lg:gap-8 xl:gap-0">I've recently channeled my expertise into a compelling project application that showcases innovation, functionality, and a deep understanding of user-centric design.</p>
 
             <div class="project-card grid lg:grid-cols-4 lg:gap-8">
+                @foreach ($projects as $project)
                 <div class="mb-4">
                     <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                         <div data-modal-target="defaultModal" data-modal-toggle="defaultModal">
-                            <img class="w-full max-w-lg rounded-lg" src="{{ asset('frontend/images/project-card.jpg') }}" alt="">
+                            <img class="w-full max-w-lg rounded-lg" src="{{ asset('storage/image/'.$project->image) }}" alt="">
                             <div class="flex justify-between items-center mt-6 mb-2 text-gray-500">
-                                <mark class="font-bold dark:text-white px-4 text-white bg-green-600 rounded dark:bg-green-500">Web</mark>
+                                <mark class="font-bold dark:text-white px-4 text-white bg-green-600 rounded dark:bg-green-500">{{ $project->category }}</mark>
                             </div>
-                            <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Snapflix - Movie Streaming Website</h2>
-                            <p class="mb-2 font-light text-gray-500 dark:text-gray-400">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.</p>
+                            <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $project->name }}</h2>
+                            <p class="mb-2 font-light text-gray-500 dark:text-gray-400">{{ $project->description }}</p>
                         </div>
                     </article> 
                 </div>
-                <div class="mb-4">
-                    <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-                        <div data-modal-target="defaultModal" data-modal-toggle="defaultModal">
-                            <img class="w-full max-w-lg rounded-lg" src="{{ asset('frontend/images/project-card.jpg') }}" alt="">
-                            <div class="flex justify-between items-center mt-6 mb-2 text-gray-500">
-                                <mark class="font-bold dark:text-white px-4 text-white bg-green-600 rounded dark:bg-green-500">Web</mark>
-                            </div>
-                            <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Snapflix - Movie Streaming Website</h2>
-                            <p class="mb-2 font-light text-gray-500 dark:text-gray-400">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.</p>
-                        </div>
-                    </article> 
-                </div>
-                <div class="mb-4">
-                    <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-                        <div data-modal-target="defaultModal" data-modal-toggle="defaultModal">
-                            <img class="w-full max-w-lg rounded-lg" src="{{ asset('frontend/images/project-card.jpg') }}" alt="">
-                            <div class="flex justify-between items-center mt-6 mb-2 text-gray-500">
-                                <mark class="font-bold dark:text-white px-4 text-white bg-green-600 rounded dark:bg-green-500">Web</mark>
-                            </div>
-                            <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Snapflix - Movie Streaming Website</h2>
-                            <p class="mb-2 font-light text-gray-500 dark:text-gray-400">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.</p>
-                        </div>
-                    </article> 
-                </div>
-                <div class="mb-4">
-                    <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-                        <div data-modal-target="defaultModal" data-modal-toggle="defaultModal">
-                            <img class="w-full max-w-lg rounded-lg" src="{{ asset('frontend/images/project-card.jpg') }}" alt="">
-                            <div class="flex justify-between items-center mt-6 mb-2 text-gray-500">
-                                <mark class="font-bold dark:text-white px-4 text-white bg-green-600 rounded dark:bg-green-500">Web</mark>
-                            </div>
-                            <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Snapflix - Movie Streaming Website</h2>
-                            <p class="mb-2 font-light text-gray-500 dark:text-gray-400">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.</p>
-                        </div>
-                    </article> 
-                </div>
+                @endforeach
             </div>
 
             <div id="defaultModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">

@@ -1,3 +1,3 @@
-<div class="grid gap-4 grid-cols-3 grid-rows-3">
+<div class="grid gap-4 grid-cols-1 grid-rows-1">
     <!-- ... -->
   </div>

@@ -5,6 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Mail\SendEmail;
 use App\Models\ContactMe;
+use App\Models\Education;
+use App\Models\Organization;
+use App\Models\Project;
+use App\Models\Review;
+use App\Models\SocialMedia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -15,7 +20,19 @@ class ContactMeController extends Controller
     }
 
     public function welcome() {
-        return view('welcome');
+        $reviews = Review::count();
+        $social_medias = SocialMedia::all();
+        $educations = Education::all();
+        $organizations = Organization::all();
+        $projects = Project::all();
+
+        return view('welcome', [
+            'educations' => $educations,
+            'social_medias' => $social_medias,
+            'reviews' => $reviews,
+            'organizations' => $organizations,
+            'projects' => $projects,
+        ]);
     }
 
     public function create() {

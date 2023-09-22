@@ -32,7 +32,8 @@ class EducationController extends Controller
         // VALIDATION DATA
         $request->validate([
             'name' => 'required|string',
-            'time' => 'required|string'
+            'time' => 'required|string',
+            'description' => 'required|string'
         ]);
 
         // STORE DATA
@@ -49,7 +50,8 @@ class EducationController extends Controller
         // VALIDATION DATA
         $request->validate([
             'name' => 'required|string',
-            'time' => 'required|string'
+            'time' => 'required|string',
+            'description' => 'required|string'
         ]);
 
         $education = Education::find($id);

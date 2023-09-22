@@ -34,7 +34,8 @@ class OrganizationController extends Controller
         $request->validate([
             'name' => 'required|string',
             'time' => 'required|string',
-            'logo' => 'required|image|mimes:jpeg,jpg,png'
+            'logo' => 'required|image|mimes:jpeg,jpg,png',
+            'description' => 'required|string'
         ]);
 
         // IMAGE
@@ -64,7 +65,8 @@ class OrganizationController extends Controller
         $request->validate([
             'name' => 'required|string',
             'time' => 'required|string',
-            'logo' => 'required|image|mimes:jpeg,jpg,png'
+            'logo' => 'required|image|mimes:jpeg,jpg,png',
+            'description' => 'required|string',
         ]);
 
         $organization = Organization::find($id);
